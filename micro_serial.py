@@ -1,7 +1,9 @@
 import asyncio
 import serial
 import websockets
-PORT_NAME = "/dev/tty.usbmodem2402"
+
+#/dev/tty.usbmodem14302
+PORT_NAME = input("PORT NAME: ")
 ser = serial.Serial(PORT_NAME, 9600)
 
 async def write_serial():
