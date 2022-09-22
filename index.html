@@ -5,11 +5,98 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.144.0/three.min.js" integrity="sha512-a+99cBAt+ou5bThiz5wJeuvXSrZVqZctMU5L8MWaLEc3PB+DPWMK3UycRong0zWYyhavY8HT0YyB/jtJD1S/yQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
     <body>
         <script src="./main.js"></script> 
-        <div class="w-36 h-16 shadow shadow-lg text-center flex rounded-lg border select-none">
-            <div id="counter" class="m-auto"></div>
+        <div class="w-full h-screen flex">
+        <div class="flex flex-row w-5/6 m-auto h-3/4 gap-4">
+            <div class="w-fit">
+                <p class="text-4xl mb-2 ml-2 font-black text-slate-700">Drones</p>
+            <div class="w-80 h-5/6 shadow shadow-lg text-center rounded-lg border select-none p-2">
+                <div class="flex flex-row w-full mt-2 border-0 border-b-2 h-fit pb-2">
+                    <div class="w-full h-fit border-0 border-r-2">
+                        <p class="text-slate-400">Name</p>
+                    </div>
+                    <div class="h-fit w-28">
+                        <p class="text-center text-slate-400 mx-2">Status</p>
+                    </div>
+                </div>
+                <div class="w-full h-16 bg-slate-100 shadow-inner rounded-md shadow-white border-4 mt-2 hover:bg-slate-200 transition ease-in delay-100 active:shadow-none flex flex-row gap-1 p-1">
+                    <div class="w-20 h-full">
+                        <img src="./assets/Project Name-7.png" class="scale-150 object-cover mt-2"/>
+                    </div>
+                    <div class="grow h-full px-2 py-1 border-l-2 border-slate-300 overflow-hidden">
+                        <p class="text-left font-bold text-slate-500">Drone 001</p>
+                        <p class="text-left text-slate-400 text-sm truncate">Kale, Bok Choy, Chinese Cabbage</p>
+                    </div>
+                    <div class="w-24 h-full flex">
+                        <div class="w-10 h-4 m-auto rounded-full bg-green-300 shadow-inner shadow-green-200"></div>
+                    </div>
+                </div>
+                <div class="w-full h-16 bg-slate-100 shadow-inner rounded-md shadow-white border mt-2 hover:bg-slate-200 transition ease-in delay-100 active:shadow-none flex flex-row gap-1 p-1">
+                    <div class="w-20 h-full">
+                        <img src="./assets/Project Name-7.png" class="scale-150 object-cover mt-2"/>
+                    </div>
+                    <div class="grow h-full px-2 py-1 border-l-2 border-slate-300 overflow-hidden">
+                        <p class="text-left font-bold text-slate-500">Drone 021</p>
+                        <p class="text-left text-slate-400 text-sm truncate">Kale, Bok Choy, Chinese Cabbage</p>
+                    </div>
+                    <div class="w-24 h-full flex">
+                        <div class="w-10 h-4 m-auto rounded-full bg-red-300 shadow-inner shadow-red-200"></div>
+                    </div>
+                </div>
+                <div class="w-full h-16 bg-slate-100 shadow-inner rounded-md shadow-white border mt-2 hover:bg-slate-200 transition ease-in delay-100 active:shadow-none flex flex-row gap-1 p-1">
+                    <div class="w-20 h-full">
+                        <img src="./assets/Project Name-7.png" class="scale-150 object-cover mt-2"/>
+                    </div>
+                    <div class="grow h-full px-2 py-1 border-l-2 border-slate-300 overflow-hidden">
+                        <p class="text-left font-bold text-slate-500">Drone 038</p>
+                        <p class="text-left text-slate-400 text-sm truncate">Kale, Bok Choy, Chinese Cabbage</p>
+                    </div>
+                    <div class="w-24 h-full flex">
+                        <div class="w-10 h-4 m-auto rounded-full bg-red-300 shadow-inner shadow-red-200"></div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
+        <div class="grow">
+            <p class="text-4xl mb-2 ml-2 font-black text-slate-700">Data</p>
+            <div class="grow h-5/6 shadow shadow-lg text-center flex flex-row rounded-lg border select-none m-auto">
+                <!-- <div id="counter" class="m-auto"></div> -->
+                
+                <div class="w-1/3 h-full bg-slate-100 flex flex-col border-r-2">
+                    <div class="grow">
+                        <img src="./assets/Project Name-7.png" class="scale-150 object-cover mt-8"/>
+                    </div>
+                    <div class="w-full h-full bg-white p-4 text-left">
+                        <div class="flex flex-row">
+                            <p class="font-bold text-2xl text-slate-500 grow">Drone 001</p>
+                            <div class="bg-green-200 px-2 rounded-full text-green-600 pt-1">ONLINE</div>
+                        </div>
+                        <hr class="my-4">
+                        <div class="flex flex-row gap-2"><p class="text-xs text-slate-400 mt-1">DATE OF DISEMBARK:</p><div class="bg-slate-200 px-2 rounded-full text-slate-600">20-09-2022</div></div>
+                        <p class="text-xs text-slate-400 mt-1">CROPS:</p>
+                        <p class="text-md text-slate-600 mt-1">Kale | Bok Choy | Chinese Cabbage</p>
+                        <p class="text-xs text-slate-400 mt-4">DESCRIPTION:</p>
+                        <p class="text-md text-slate-500 mt-1">Disembarked from Tuas Base, crops meant to be delivered to Sheng Siong Supermarket</p>
+                    </div>
+                </div>
+                <div class="grow p-4 text-left flex flex-col">
+                    <p class="text-3xl font-bold text-slate-400">Sensors</p>
+                    <div class=" grow"></div>
+                    <div class="w-full h-16 flex flex-row pt-6 gap-2">
+                        <div class="grow"></div>
+                        <button class="p-2 px-4 text-white bg-slate-600 rounded-lg h-10 shadow-slate-400 shadow-inner hover:bg-slate-700 active:bg-slate-400">NOTIFY</button>
+                        <button class="p-2 px-4 text-green-700 bg-green-400 rounded-lg h-10 shadow-green-200 shadow-inner hover:bg-green-500 active:bg-green-400">HARVEST</button>
+                        <button class="p-2 px-4 text-orange-800 bg-orange-400 rounded-lg h-10 shadow-orange-300 shadow-inner hover:bg-orange-500 active:bg-orange-400">RETURN</button>
+                        <button class="p-2 px-4 text-red-800 bg-red-400 rounded-lg h-10 shadow-red-300 shadow-inner hover:bg-red-700 active:bg-red-400">STOP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     </body>
 </html>
