@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>WebSocket demo</title>
+        <title>Drone Ship Dashboard Demo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
@@ -10,11 +10,13 @@
     <body>
         <script src="./main.js"></script> 
         <div class="w-full h-screen flex">
-        <div class="flex flex-row w-5/6 m-auto h-3/4 gap-4">
+        <div class="flex flex-row w-full m-auto h-full">
             <div class="w-fit">
-                <p class="text-4xl mb-2 ml-2 font-black text-slate-700">Drones</p>
-            <div class="w-80 h-5/6 shadow shadow-lg text-center rounded-lg border select-none p-2">
+            <div class="w-80 h-full shadow shadow-lg text-center border select-none p-2">
+                <p class="p-2 py-4 text-left text-4xl text-slate-700 font-black">Drones</p>
+                <hr >
                 <div class="flex flex-row w-full mt-2 border-0 border-b-2 h-fit pb-2">
+                    
                     <div class="w-full h-fit border-0 border-r-2">
                         <p class="text-slate-400">Name</p>
                     </div>
@@ -61,12 +63,9 @@
             </div>
             
         </div>
-        <div class="grow">
-            <p class="text-4xl mb-2 ml-2 font-black text-slate-700">Data</p>
-            <div class="grow h-5/6 shadow shadow-lg text-center flex flex-row rounded-lg border select-none m-auto">
-                <!-- <div id="counter" class="m-auto"></div> -->
-                
-                <div class="w-1/3 h-full bg-slate-100 flex flex-col border-r-2">
+        <div class="grow ">
+            <div class="grow h-full shadow shadow-lg text-center flex flex-row border select-none m-auto overflow-hidden">
+                <div class="w-1/3 h-full bg-slate-100 flex flex-col border-r-2 ">
                     <div class="grow">
                         <img src="./assets/Project Name-7.png" class="scale-150 object-cover mt-8"/>
                     </div>
@@ -77,17 +76,30 @@
                         </div>
                         <hr class="my-4">
                         <div class="flex flex-row gap-2"><p class="text-xs text-slate-400 mt-1">DATE OF DISEMBARK:</p><div class="bg-slate-200 px-2 rounded-full text-slate-600">20-09-2022</div></div>
-                        <p class="text-xs text-slate-400 mt-1">CROPS:</p>
+                        <p class="text-xs text-slate-400 mt-6">CROPS:</p>
                         <p class="text-md text-slate-600 mt-1">Kale | Bok Choy | Chinese Cabbage</p>
-                        <p class="text-xs text-slate-400 mt-4">DESCRIPTION:</p>
+                        <p class="text-xs text-slate-400 mt-6">DESCRIPTION:</p>
                         <p class="text-md text-slate-500 mt-1">Disembarked from Tuas Base, crops meant to be delivered to Sheng Siong Supermarket</p>
                     </div>
                 </div>
                 <div class="grow p-4 text-left flex flex-col">
                     <p class="text-3xl font-bold text-slate-400">Sensors</p>
-                    <div class=" grow"></div>
+                    <br>
+                    <div class="grow w-full gap-4">
+                        <div class="w-full flex flex-row gap-4">
+                            <div class="w-full h-40 rounded-lg border bg-slate-100"></div>
+                            <div class="w-full h-40 rounded-lg border bg-slate-100"></div>
+                            <div class="w-full h-40 rounded-lg border bg-slate-100"></div>
+                        </div>
+                        <div class="w-full flex flex-row gap-4 mt-4 text-center">
+                            <div class="w-full h-40 rounded-lg border bg-slate-100 pt-14 text-3xl font-bold" id="temperature-box"></div>
+                            <div class="w-full h-40 rounded-lg border bg-slate-100 pt-14 text-3xl font-bold" id="light-box"></div>
+                        </div>
+                    </div>
                     <div class="w-full h-16 flex flex-row pt-6 gap-2">
-                        <div class="grow"></div>
+                        <div class="grow">
+                            
+                        </div>
                         <button class="p-2 px-4 text-white bg-slate-600 rounded-lg h-10 shadow-slate-400 shadow-inner hover:bg-slate-700 active:bg-slate-400">NOTIFY</button>
                         <button class="p-2 px-4 text-green-700 bg-green-400 rounded-lg h-10 shadow-green-200 shadow-inner hover:bg-green-500 active:bg-green-400">HARVEST</button>
                         <button class="p-2 px-4 text-orange-800 bg-orange-400 rounded-lg h-10 shadow-orange-300 shadow-inner hover:bg-orange-500 active:bg-orange-400">RETURN</button>

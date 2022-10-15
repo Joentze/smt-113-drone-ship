@@ -3,8 +3,10 @@ var ws = new WebSocket("ws://127.0.0.1:5678/"),
             ws.onmessage = function (event) {
                 let message = event.data
                 message = JSON.parse(message)
-                let {light, t} = message
-                document.getElementById("counter").innerHTML = `light: ${light} temperature: ${t}`
+                let {light, temperat, harvest, error, vibrateX, vibrateY ,orient} = message
+                console.log(light, temperat, harvest, error, vibrateX, vibrateY, orient)
+                document.getElementById("light-box").innerHTML = light
+                document.getElementById("temperatur-box").innerHTML = temperat
                 // var messages = document.getElementsByTagName('ul')[0],
                 //     message = document.createElement('li'),
                 //     content = document.createTextNode(event.data);
