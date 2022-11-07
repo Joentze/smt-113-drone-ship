@@ -6,12 +6,19 @@ var ws = new WebSocket("ws://127.0.0.1:5678/"),
                 let {light, temperat, harvest, error, vibrateX, vibrateY ,orient} = message
                 console.log(light, temperat, harvest, error, vibrateX, vibrateY, orient)
                 document.getElementById("light-box").innerHTML = light
-                document.getElementById("temperatur-box").innerHTML = temperat
-                // var messages = document.getElementsByTagName('ul')[0],
-                //     message = document.createElement('li'),
-                //     content = document.createTextNode(event.data);
-                // message.appendChild(content);
-                // messages.appendChild(message);
+                document.getElementById("temperature-box").innerHTML = temperat
+              //CAPSIZED POP UP                
+                if(Math.abs(orient) > 30){
+                  document.getElementById("modal-box").style.visibility = "visible"
+                  console.log("capsized")
+                }
+                else{
+                  document.getElementById("modal-box").style.visibility = "hidden"
+                  console.log("not capsized")
+                }
+                document.getElementById("harvest-modal-box").style.visibility = "hidden"
+                document.getElementById("collision-modal-box").style.visibility = "hidden"
+                document.getElementById("error-modal-box").style.visibility = "hidden"
             };
             // document.body.appendChild(messages);
 const getWeatherData = ()=>{
