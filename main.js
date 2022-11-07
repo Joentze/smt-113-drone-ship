@@ -28,7 +28,7 @@ const sendTelegramMsg = ()=>{
     let xhr = new XMLHttpRequest()
     xhr.open("POST", "https://api.telegram.org/bot5498520650:AAEaMWPf4UDpPGh65jIeedu2vezhUXfrWXE/sendMessage")
     xhr.setRequestHeader('Content-Type','application/json')
-    xhr.send(JSON.stringify({"chat_id":"549991017","text":"hello"}))    
+    xhr.send(JSON.stringify({"chat_id":"-857113019","text":"hello"}))    
     xhr.onreadystatechange = () => {
         if (xhr.readyState === 4) {
           console.log(xhr.response);
