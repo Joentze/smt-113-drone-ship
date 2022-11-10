@@ -10,17 +10,66 @@
     <body>
         <script src="./main.js"></script> 
         <div class="absolute flex w-full h-screen bg-opacity-80 filter bg-black z-50" id="modal-box">
-            <div class="opacity-100 m-auto h-1/2 rounded-md bg-white shadow-md w-2/3 lg:w-1/2"></div>
+            <div class="opacity-100 m-auto h-fit rounded-md bg-white shadow-md w-1/3 lg:w-1/2 p-4">
+                <div class="bg-red-200 rounded-sm p-2 flex flex-row gap-2">
+                    <svg class="fill-red-800" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1 6h2v8h-2v-8zm1 12.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/></svg>
+                    <p class="text-xl text-orange-800">We've detected a capsized drone ship!</p>
+                </div>
+                <br>
+                <p class="text-slate-500">
+                    The gyroscopic sensors on drone ship have indicated an row angle of more than 50 degrees, do notify the ground team to check it out
+                </p>
+                <br>
+                <div class="flex flex-row gap-4">
+                    <div class="flex-grow"></div>
+                    <button class="text-slate-600 p-2 px-4 rounded-lg active hover:bg-slate-200" onclick="capsizeCancel()">CANCEL</button>
+                    <button class="p-2 px-4 text-orange-800 bg-red-400 rounded-lg h-10 shadow-red-300 shadow-inner hover:bg-red-500 active:bg-red-400" onclick="capsizeBtn()">NOTIFY</button>
+                </div>
+            </div>
+        </div>
+        <div class="absolute flex w-full h-screen bg-opacity-80 filter bg-black z-50" id="collision-modal-box">
+            <div class="opacity-100 m-auto h-fit rounded-md bg-white shadow-md w-2/3 lg:w-1/2 p-4">
+                <div class="bg-orange-200 rounded-sm p-2 flex flex-row gap-2">
+                    <svg class="fill-orange-800" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1 6h2v8h-2v-8zm1 12.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/></svg>
+                    <p class="text-xl text-orange-800">We've detected a collision!</p>
+                </div>
+                <br>
+                <p class="text-slate-500">
+                    The vibration sensors on drone ship 1 have detected higher than average values, a collision may have occured, notify the ground team to check it out
+                </p>
+                <br>
+                <div class="flex flex-row gap-4">
+                    <div class="flex-grow"></div>
+                    <button class="text-slate-600 p-2 px-4 rounded-lg active hover:bg-slate-200" onclick="collisionCancel()">CANCEL</button>
+                    <button class="p-2 px-4 text-orange-800 bg-orange-400 rounded-lg h-10 shadow-orange-300 shadow-inner hover:bg-orange-500 active:bg-orange-400" onclick="collisionBtn()">NOTIFY</button>
+                </div>
+            </div>
         </div>
         <div class="absolute flex w-full h-screen bg-opacity-80 filter bg-black z-50" id="harvest-modal-box">
+            <div class="opacity-100 m-auto h-fit rounded-md bg-white shadow-md w-2/3 lg:w-1/2 p-4">
+                <div class="bg-green-200 rounded-sm p-2 flex flex-row gap-2">
+                    <svg class="fill-green-800" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1 6h2v8h-2v-8zm1 12.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/></svg>
+                    <p class="text-xl text-green-800">Harvest day is here!</p>
+                </div>
+                <br>
+                <p class="text-slate-500">
+                    ML models on drone ship have detected that the crops are ready for harvest, notify the ground team to be ready for harvest.
+                </p>
+                <br>
+                <div class="flex flex-row gap-4">
+                    <div class="flex-grow"></div>
+                    <button class="text-slate-600 p-2 px-4 rounded-lg active hover:bg-slate-200" onclick="harvestCancel()">CANCEL</button>
+                    <button class="p-2 px-4 text-green-800 bg-green-400 rounded-lg h-10 shadow-green-300 shadow-inner hover:bg-green-500 active:bg-green-400" onclick="harvestBtn()">NOTIFY</button>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="absolute flex w-full h-screen bg-opacity-80 filter bg-black z-50" id="harvest-modal-box">
             <div class="opacity-100 m-auto h-1/2 rounded-md bg-white shadow-md w-2/3 lg:w-1/2"></div>
         </div>
         <div class="absolute flex w-full h-screen bg-opacity-80 filter bg-black z-50" id="error-modal-box">
             <div class="opacity-100 m-auto h-1/2 rounded-md bg-white shadow-md w-2/3 lg:w-1/2"></div>
-        </div>
-        <div class="absolute flex w-full h-screen bg-opacity-80 filter bg-black z-50" id="collision-modal-box">
-            <div class="opacity-100 m-auto h-1/2 rounded-md bg-white shadow-md w-2/3 lg:w-1/2"></div>
-        </div>
+        </div> -->
+        
         <div class="w-full h-screen flex">
         
         <div class="flex flex-row w-full m-auto h-full">
@@ -99,10 +148,10 @@
                     <p class="text-3xl font-bold text-slate-400">Sensors</p>
                     <br>
                     <div class="grow w-full gap-4">
-                        <div class="w-full flex flex-row gap-4">
-                            <div class="w-full h-40 rounded-lg border bg-slate-100"></div>
-                            <div class="w-full h-40 rounded-lg border bg-slate-100"></div>
-                            <div class="w-full h-40 rounded-lg border bg-slate-100"></div>
+                        <div class="w-full flex flex-row gap-4 text-center">
+                            <div class="w-full h-40 rounded-lg border bg-slate-100 pt-14 text-3xl font-bold" id="n-box"></div>
+                            <div class="w-full h-40 rounded-lg border bg-slate-100 pt-14 text-3xl font-bold" id="p-box"></div>
+                            <div class="w-full h-40 rounded-lg border bg-slate-100 pt-14 text-3xl font-bold" id="k-box"></div>
                         </div>
                         <div class="w-full flex flex-row gap-4 mt-4 text-center">
                             <div class="w-full h-40 rounded-lg border bg-slate-100 pt-14 text-3xl font-bold" id="temperature-box"></div>
@@ -113,7 +162,6 @@
                         <div class="grow">
                             
                         </div>
-                        <button class="p-2 px-4 text-white bg-slate-600 rounded-lg h-10 shadow-slate-400 shadow-inner hover:bg-slate-700 active:bg-slate-400" onclick="sendTelegramMsg()">NOTIFY</button>
                         <button class="p-2 px-4 text-green-700 bg-green-400 rounded-lg h-10 shadow-green-200 shadow-inner hover:bg-green-500 active:bg-green-400">HARVEST</button>
                         <button class="p-2 px-4 text-orange-800 bg-orange-400 rounded-lg h-10 shadow-orange-300 shadow-inner hover:bg-orange-500 active:bg-orange-400">RETURN</button>
                         <button class="p-2 px-4 text-red-800 bg-red-400 rounded-lg h-10 shadow-red-300 shadow-inner hover:bg-red-700 active:bg-red-400">STOP</button>
